@@ -66,6 +66,11 @@
   margin: 0 0 15px;
 }
 
+.product-grid .no-post {
+  margin: 6.75rem;
+  font-size: 40px;
+}
+
 .btn {
   background: #0073e6;
   color: #fff;
