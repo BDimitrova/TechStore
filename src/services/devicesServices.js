@@ -11,9 +11,9 @@ exports.findUser = (userId) => User.findById(userId);
 
 exports.findOwner = (userId) => User.findById(userId);
 
-exports.getMySignUp = (userId) => Devices.find({ preferedList: userId}).lean();
+exports.getMyPrefered = (userId) => Devices.find({ preferedList: userId}).lean();
 
-exports.getMyCreatedCourse = (userId) => Devices.find({ owner: userId}).lean();
+exports.getMyCreatedDevices = (userId) => Devices.find({ owner: userId}).lean();
 
 exports.getOne = (devicesId) => Devices.findById(devicesId).populate('preferedList');
 

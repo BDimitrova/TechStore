@@ -11,12 +11,12 @@ router.get('/about', async (req, res) => {
     res.render('about');
 });
 
-// router.use('/profile',isAuth, async (req, res) => {
-//     const userId = req.user._id;
-//     let signUp = await courseServices.getMySignUp(userId);
-//     let created = await courseServices.getMyCreatedCourse(userId);
+router.use('/profile',isAuth, async (req, res) => {
+    const userId = req.user._id;
+    let prefered = await devicesServices.getMyPrefered(userId);
+    let created = await devicesServices.getMyCreatedDevices(userId);
 
-//     res.render('profile', {signUp, created});
-// });
+    res.render('profile', {created, prefered});
+});
 
 module.exports = router
