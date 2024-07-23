@@ -8,8 +8,7 @@
     <div class="container">
         <div class="product-details">
             <div class="product-image">
-                <img src="{{image}}"
-                    alt="Laptop">
+                <img src="{{image}}" alt="Laptop">
             </div>
             <div class="product-info">
                 <h3>Brand: {{brand}}</h3>
@@ -26,9 +25,18 @@
             </div>
         </div>
         <div class="product-actions">
+            {{#if user}}
+            {{#if isOwner}}
             <button class="btn edit"><a href="/devices/{{_id}}/edit">Edit</a></button>
             <button class="btn delete"><a href="/devices/{{_id}}/delete">Delete</a></button>
+            {{else}}
+            {{#if isPrefered}}
+            <p class="prefer-message">You've already prefered this device</p>
+            {{else}}
             <button class="btn prefer"><a href="/devices/{{_id}}/prefer">Prefer</a></button>
+            {{/if}}
+            {{/if}}
+            {{/if}}
         </div>
     </div>
 </section>

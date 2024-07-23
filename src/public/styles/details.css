@@ -102,6 +102,16 @@
   font-weight: bold;
 }
 
+.product-actions .prefer-message {
+  background: #0073e6;
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px;
+  width: 30%;
+  border-radius: 5px;
+  color: white;
+}
+
 .product-actions .btn:hover {
   transform: translateY(-5px);
 }

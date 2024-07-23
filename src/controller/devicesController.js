@@ -71,14 +71,14 @@ router.get('/:devicesId/details', async (req, res) => {
     res.render('devices/details', { ...devicesData, isOwner, isPrefered, devicesOwner });
 });
 
-// router.get('/:courseId/sign', async (req, res) => {
-//     const courseId = req.params.courseId
-//     let course = await courseServices.getOne(courseId);
+router.get('/:devicesId/prefer', async (req, res) => {
+    const devicesId = req.params.devicesId
+    let devices = await devicesServices.getOne(devicesId);
 
-//     course.signUpList.push(req.user._id);
-//     await course.save();
-//     res.redirect(`/course/${req.params.courseId}/details`);
-// });
+    devices.preferedList.push(req.user._id);
+    await devices.save();
+    res.redirect(`/devices/${req.params.devicesId}/details`);
+});
 
 router.get('/:devicesId/edit', checkIsOwner, async (req, res) => {
     const devicesId = req.params.devicesId;
